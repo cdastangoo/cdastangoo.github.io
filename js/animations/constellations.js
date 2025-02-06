@@ -1,8 +1,8 @@
 const constellations = (sketch) => {
 
-  var stars = [];
   var canvasWidth, canvasHeight;
   var currWidth, currHeight, gridWidth;
+  var stars = [];
   const gridLowerBound = getBrowser() === "firefox" ? 72 : 64,
         gridUpperBound = getBrowser() === "firefox" ? 80 : 72;
   const sizeLowerBound = 1,
@@ -51,9 +51,9 @@ const constellations = (sketch) => {
   sketch.windowResized = () => {
     canvasWidth = $('header').width();
     canvasHeight = $('header').height();
-    sketch.resizeCanvas(sketch.windowWidth, sketch.windowHeight);
-    const newWidth = Math.floor(sketch.windowWidth / gridWidth);
-    const newHeight = Math.floor(sketch.windowHeight / gridWidth);
+    sketch.resizeCanvas(canvasWidth, canvasHeight);
+    const newWidth = Math.floor(canvasWidth / gridWidth);
+    const newHeight = Math.floor(canvasHeight / gridWidth);
     if (currWidth === newWidth && currHeight === newHeight)
       return;
     // create stars when width increases

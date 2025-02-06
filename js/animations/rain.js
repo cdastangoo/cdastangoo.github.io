@@ -1,8 +1,9 @@
 const rain = (sketch) => {
 
+  var canvasWidth, canvasHeight;
   var drops = [];
   var dropCount = 250;
-  const dropGap = getBrowser() === "firefox" ? 8 : 4;
+  const dropGap = isBrowserSupported() ? (isMac() ? 8 : 4) : 8;
   const minSplashRadius = 15,
         maxSplashRadius = 30;
   const minSplashHeight = 0.8,
@@ -16,12 +17,12 @@ const rain = (sketch) => {
 
   // p5 canvas setup
   sketch.setup = () => {
-    const canvasWidth = $('header').width();
-    const canvasHeight = $('header').height();
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
     sketch.createCanvas(canvasWidth, canvasHeight).id('animation-canvas');
     sketch.frameRate(60);
 
-    dropCount = Math.floor(sketch.width / dropGap);
+    dropCount = Math.floor(canvasWidth / dropGap);
     for (let i = 0; i < dropCount; i++) {
       addDrop();
     }
@@ -40,8 +41,10 @@ const rain = (sketch) => {
 
   // handle p5 canvas resize
   sketch.windowResized = () => {
-    sketch.resizeCanvas(sketch.windowWidth, sketch.windowHeight);
-    const newCount = Math.floor(sketch.width / dropGap);
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
+    sketch.resizeCanvas(canvasWidth, canvasHeight);
+    const newCount = Math.floor(canvasWidth / dropGap);
     if (newCount > dropCount) {
       for (let i = 0; i < newCount - dropCount; i++) {
         addDrop();
@@ -51,10 +54,6 @@ const rain = (sketch) => {
     }
     dropCount = newCount;
   };
-
-  const remove = function() {
-    sketch.removeElements();
-  }
 
   // draw rain drop given it's data
   const drawDrop = (drop) => {

@@ -4,8 +4,7 @@ $(document).on('click', 'a[href^="#"]', function (e) {
   e.preventDefault();
   const href = $.attr(this, 'href');
   const scrollHeight = $(href).offset().top;
-  const currentHeight = $(window).scrollTop();
-  const scrollDelay = Math.abs(scrollHeight - currentHeight) / 4;
+  const scrollDelay = isMobile() ? 200 : 400;
   $root.animate({
     scrollTop: scrollHeight,
   }, scrollDelay, function () {
@@ -27,10 +26,13 @@ const fadeGrid = () => {
   let brightnessFactor = 1.0;
   fadeGridInterval = setInterval(() => {
     if (brightnessFactor > 0.0) {
-      $grid.css('mask-image', `radial-gradient(calc(100vw / 4) circle at var(--x) var(--y), rgb(255 255 255 / ${10 + (100 - 10) * brightnessFactor}%), rgb(255 255 255 / ${10 + (50 - 10) * brightnessFactor}%) 10%, rgb(255 255 255 / ${10 + (25 - 10) * brightnessFactor}%), rgb(255 255 255 / 10%))`);
+      const mask = `radial-gradient(calc(100vw / 4) circle at var(--x) var(--y), rgb(255 255 255 / ${10 + (100 - 10) * brightnessFactor}%), rgb(255 255 255 / ${10 + (50 - 10) * brightnessFactor}%) 10%, rgb(255 255 255 / ${10 + (25 - 10) * brightnessFactor}%), rgb(255 255 255 / 10%))`;
+      $grid.css('mask-image', mask);
+      $grid.css('-webkit-mask-image', mask);
       brightnessFactor -= 0.01;
     } else {
-      $grid.css('mask-image', 'radial-gradient(circle at center, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%))');
+      $grid.css('mask-image', 'auto');
+      $grid.css('-webkit-mask-image', 'auto');
       clearInterval(fadeGridInterval);
     }
   }, 5);
@@ -41,14 +43,15 @@ const futuristicThemeMouseMove = (e) => {
   clearInterval(fadeGridInterval);
 
   const $grid = $('#futuristic-grid');
-  $grid.css('mask-image', "radial-gradient(calc(100vw / 4) circle at var(--x) var(--y), var(--primary), rgb(255 255 255 / 50%) 10%, rgb(255 255 255 / 25%), rgb(255 255 255 / 10%))");
-  $grid.css('-webkit-mask-image', "radial-gradient(calc(100vw / 4) circle at var(--x) var(--y), var(--primary), rgb(255 255 255 / 50%) 10%, rgb(255 255 255 / 25%), rgb(255 255 255 / 10%))");
+  const mask = "radial-gradient(calc(100vw / 4) circle at var(--x) var(--y), var(--primary), rgb(255 255 255 / 50%) 10%, rgb(255 255 255 / 25%), rgb(255 255 255 / 10%))";
+  $grid.css('mask-image', mask);
+  $grid.css('-webkit-mask-image', mask);
 
-  const ypos = e.clientY + $(window).scrollTop() - $(window).height() - 64;
-  $grid.css('--x', `${e.clientX}px`);
-  $grid.css('--y', `${ypos}px`);
+  const xPos = e.clientX;
+  const yPos = e.clientY + $(window).scrollTop() - $('header').height() - 64;
+  $grid.css('--x', `${xPos}px`);
+  $grid.css('--y', `${yPos}px`);
 
-  // fadeGrid();
   fadeGridTimeout = setTimeout(() => fadeGrid(), 400);
 };
 
@@ -145,9 +148,11 @@ const handleNavbarCollapse = () => {
   if (isMobile()) {
     const $navbar = $('.navbar-menu');
     $navbar.removeClass('navbar-open');
-    $navbar.css('margin-bottom', 'var(--menu-offset)');
+    const offset = `-${$navbar.height()}px`
+    $(':root').css('--menu-offset', offset);
+    $navbar.css('margin-bottom', offset);
     $navbar.css('pointer-events', 'none');
-    $('.navbar-items').css('transform', 'translateY(var(--menu-offset))');
+    $('.navbar-items').css('transform', `translateY(${offset})`);
   }
 };
 
@@ -164,7 +169,7 @@ const handleNavbarToggle = () => {
 
 // hide or show scroll top button based on scroll height
 const viewScrollTopButton = () => {
-  const $scrollTop = $('#scroll-top');
+  const $scrollTop = $('#scroll-top-btn');
   if ($(window).scrollTop() <= (isMobile() ? 160 : 20)) {
     $scrollTop.hide();
   }
@@ -368,12 +373,21 @@ const addModalListeners = () => {
 
 /* expand buttons */
 
+// add expand button to a section
+const addExpandButton = ($parent) => {
+  const $expandButton = $("<button>").addClass("btn expand-btn").text("See More...");
+  const $expandWrapper = $("<div>").addClass("expand-btn-wrapper");
+  $expandWrapper.append($expandButton);
+  $parent.append($expandWrapper);
+};
+
 const addExpandButtonListeners = () => {
+  // handle show more when expand button is clicked
   $('.expand-btn').click(e => {
-    const $button = $(e.currentTarget);
-    $button.hide();
-    $button.parent().children('div').each((_idx, elem) => {
+    const $expand = $(e.currentTarget).parent();
+    $expand.parent().children('div').each((_idx, elem) => {
       $(elem).removeClass('hidden');
     });
+    $expand.hide();
   })
 };

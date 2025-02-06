@@ -32,11 +32,9 @@
       </nav>
     </div>
     <!-- scroll top button -->
-    <div id="scroll-top">
-      <a href="#home" class="btn icon-btn">
-        <i class="fas fa-angle-up"></i>
-      </a>
-    </div>
+    <a href="#home" class="btn icon-btn" id="scroll-top-btn">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
     <!-- header -->
     <header>
@@ -81,20 +79,19 @@
           <h2 class="glass">Welcome</h2>
           <h3 class="glass">How this site works</h3>
           <p class="glass">
-            This site was built from scratch with HTML, CSS, and (mostly) vanilla JavaScript. 
-            Everything you see from the UI to the animations at the top of the page were built from scratch. 
-            Besides some jQuery and p5.js (a 2D graphics library) for the animations, no external libraries or design systems were used. 
+            This site is built with HTML, CSS, and (mostly) vanilla JavaScript. 
+            Everything you see from the UI to the animations at the top of the page is built from scratch. 
+            Besides some jQuery and p5.js (a 2D graphics library) for the animations, no external libraries or design systems have been used. 
           </p>
           <p class="glass">
-            The end goal here is for this site to be fully customizable, so every user could get a unique experience when they refresh the page.
-            So far you can change the color scheme and the animations at the top of the page -
-            down the line, a custom theme / look and feel too.
-            Stay tuned for future updates!
+            Some features of this website are experimental - for the best experience, please use Chrome or Edge in desktop mode.
           </p>
           <p class="glass">
+            Like a cathedral, this site is always under construction.
+            I'm always thinking of cool ways to tinker around here, so stay tuned for future updates!
             View the old version (v1) of this site
             <a href="/v1" target="_blank" rel="noopener noreferrer">here</a>
-            to see the transformation thus far!
+            to see the transformation so far.
           </p>
           <!-- theme selection (TODO v3) -->
           <!-- <h4 class="glass" id="theme-select">Select a Theme Style</h4>
@@ -155,7 +152,7 @@
           <p class="glass">I am a software engineer with over 5 years of experience based in Honolulu, Hawaii.</p>
           <p class="glass">I am experienced in a number of full stack technologies, with particular expertise and passion for <strong>Ruby on Rails</strong> and <strong>React.</strong></p>
           <p class="glass">I also have professional experience with Next.js, Python, and Node.js</p>
-          <a class="btn uppercase" href="#">View Resume</a>
+          <a class="btn uppercase" href="#experience">View Resume</a>
         </section>
 
         <!-- skills section -->
@@ -183,7 +180,9 @@
             <div class="language-level" id="advanced">
               <h3>Advanced</h3>
             </div>
-            <button class="btn expand-btn" id="languages-expand">See More...</button>
+            <div class="expand-btn-wrapper">
+              <button class="btn expand-btn">See More...</button>
+            </div>
             <div class="language-level hidden" id="proficient">
               <h3>Proficient</h3>
             </div>
@@ -277,7 +276,7 @@
         <!-- contact section -->
         <section id="contact">
           <h2 class="glass">Contact</h2>
-          <p>I am currently open to new opportunities! Connect with me by email or LinkedIn</p>
+          <p class="glass">I am currently open to new opportunities! Connect with me by email or LinkedIn</p>
           <div class="contact-container">
             <div class="contact-card">
               <i class="card-icon fas fa-envelope"></i>

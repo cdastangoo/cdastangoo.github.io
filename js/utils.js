@@ -151,3 +151,45 @@ const supportedBrowsers = ["chrome", "brave", "edge"];
 const isBrowserSupported = () => {
   return supportedBrowsers.includes(getBrowser());
 };
+
+/* device utility functions */
+
+const getDevice = () => {
+  const platform = navigator.platform.toLowerCase();
+  if (platform.includes("win"))
+    return "windows";
+  else if (platform.includes("mac"))
+    return "mac";
+  else if (platform.includes("linux"))
+    return "linux";
+  else if (platform.includes("android"))
+    return "android";
+  else if (platform.slice(0, 2) === 'ip')
+    return platform.split(' ')[0];
+  else
+    return platform;
+};
+
+const isWindows = () => {
+  return getDevice() === "windows";
+};
+
+const isMac = () => {
+  return getDevice() === "mac";
+};
+
+const isLinux = () => {
+  return getDevice() === "linux";
+};
+
+const isAndroid = () => {
+  return getDevice() === "android";
+};
+
+const isIPhone = () => {
+  return getDevice() === "iphone";
+};
+
+const isIPad = () => {
+  return getDevice() === "ipad";
+};

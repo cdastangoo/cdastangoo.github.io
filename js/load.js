@@ -36,8 +36,7 @@ const renderSkillData = (skillData) => {
 
     if (isMobile()) {
       if (idx === 2 && skillData.length > 3) {
-        const $expand = $("<button>").addClass("btn expand-btn").attr('id', 'skills-expand').text("See More...");
-        $skills.append($expand);
+        addExpandButton($skills);
       }
       else if (idx > 2) {
         $skill.addClass('hidden');
@@ -139,7 +138,13 @@ const renderExperienceData = (experienceData) => {
     if (dates) {
       const $dates = $("<span>");
       $dates.append($("<i>").addClass("fas fa-calendar"));
-      $dates.append($("<p>").text(dates));
+      let formattedDates = dates;
+      if (isMobile()) {
+        ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Fall", "Winter", "Spring", "Summer"].forEach(month => {
+          formattedDates = formattedDates.replace(`${month} `, "");
+        });
+      }
+      $dates.append($("<p>").text(formattedDates));
       $info.append($dates);
     }
     $content.append($info);
@@ -183,8 +188,7 @@ const renderProjectData = (projectData) => {
 
     const initialLimit = isMobile() ? 3 : 6;
     if (idx === initialLimit - 1 && projectData.length > initialLimit) {
-      const $expand = $("<button>").addClass("btn expand-btn").attr('id', 'projects-expand').text("See More...");
-      $cards.append($expand);
+      addExpandButton($cards);
     }
     else if (idx >= initialLimit) {
       $card.addClass('hidden');
@@ -262,7 +266,7 @@ const renderProjectData = (projectData) => {
   });
 };
 
-// render data from data.json and add listeners
+// render data from content.json and add listeners
 const parseJSON = (data) => {
   const { skillData, languageData, experienceData, projectData } = data;
 
@@ -282,7 +286,7 @@ const parseJSON = (data) => {
 // render custom website content
 $(document).ready(function () {
   renderBrowserInfo();
-  $.getJSON("js/data.json", (data) => {
+  $.getJSON("js/content.json", (data) => {
     parseJSON(data);
   });
 });

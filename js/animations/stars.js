@@ -1,7 +1,8 @@
 const stars = (sketch) => {
 
-  var stars = [];
+  var canvasWidth, canvasHeight;
   var currWidth, currHeight, gridWidth;
+  var stars = [];
   const gridLowerBound = getBrowser() === "firefox" ? 36 : 24,
         gridUpperBound = getBrowser() === "firefox" ? 42 : 32;
   const sizeLowerBound = 0.5,
@@ -15,8 +16,8 @@ const stars = (sketch) => {
 
   // p5 canvas setup
   sketch.setup = () => {
-    const canvasWidth = $('header').width();
-    const canvasHeight = $('header').height();
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
     sketch.createCanvas(canvasWidth, canvasHeight).id('animation-canvas');
     sketch.frameRate(60);
 
@@ -44,9 +45,11 @@ const stars = (sketch) => {
 
   // handle p5 canvas resize
   sketch.windowResized = () => {
-    sketch.resizeCanvas(sketch.windowWidth, sketch.windowHeight);
-    const newWidth = Math.floor(sketch.windowWidth / gridWidth);
-    const newHeight = Math.floor(sketch.windowHeight / gridWidth);
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
+    sketch.resizeCanvas(canvasWidth, canvasHeight);
+    const newWidth = Math.floor(canvasWidth / gridWidth);
+    const newHeight = Math.floor(canvasHeight / gridWidth);
     if (currWidth === newWidth && currHeight === newHeight)
       return;
     // create stars when width increases

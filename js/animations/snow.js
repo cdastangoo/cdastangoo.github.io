@@ -1,7 +1,9 @@
 const snow = (sketch) => {
 
+  var canvasWidth, canvasHeight;
   var flakes = [];
-  const flakeCount = 400;
+  var flakeCount = 400;
+  const flakeGap = isBrowserSupported() ? 3 : 4;
   const minSize = 4,
         maxSize = 8;
   const maxGrowth = 2;
@@ -12,11 +14,12 @@ const snow = (sketch) => {
 
   // p5 canvas setup
   sketch.setup = () => {
-    const canvasWidth = $('header').width();
-    const canvasHeight = $('header').height();
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
     sketch.createCanvas(canvasWidth, canvasHeight).id('animation-canvas');
     sketch.frameRate(60);
 
+    flakeCount = Math.floor(canvasWidth / flakeGap);
     for (let i = 0; i < flakeCount; i++) {
       addSnow();
     }
@@ -37,7 +40,18 @@ const snow = (sketch) => {
 
   // handle p5 canvas resize
   sketch.windowResized = () => {
-    sketch.resizeCanvas(sketch.windowWidth, sketch.windowHeight);
+    canvasWidth = $('header').width();
+    canvasHeight = $('header').height();
+    sketch.resizeCanvas(canvasWidth, canvasHeight);
+    const newCount = Math.floor(canvasWidth / flakeGap);
+    if (newCount > flakeCount) {
+      for (let i = 0; i < newCount - flakeCount; i++) {
+        addSnow();
+      }
+    } else if (newCount < flakeCount) {
+      flakes.splice(-(flakeCount - newCount));
+    }
+    flakeCount = newCount;
   };
 
   // draws snowflake

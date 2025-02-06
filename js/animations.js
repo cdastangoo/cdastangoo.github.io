@@ -127,6 +127,7 @@ $('#animation-refresh').click(e => {
 const allAnimations = [rain, constellations, snow, stars];
 const futuristicAnimations = [rain, constellations, snow, stars];
 
+// let initialAnimation = isMobile() ? constellations : rain;
 let initialAnimation = rain;
 var animation = initialAnimation;
 var p = new p5(animation);
