@@ -1,0 +1,273 @@
+{
+  "skillData": [
+    {
+      "name": "Frontend",
+      "description": "Build elegant, clean, and responsive user interfaces. Utilize a variety of front-end frameworks to ensure an efficient and intuitive user experience.",
+      "skills": ["React", "Redux", "Next.js", "TypeScript"],
+      "brackets": ["<", "/>"],
+      "icon": "code",
+      "image": "backend.png"
+    },
+    {
+      "name": "Backend",
+      "description": "Develop dynamic, scalable web apps using various server-side frameworks. Implement robust APIs, secure routing, and complex architectural patterns.",
+      "skills": ["Ruby on Rails", "Node.js", "Python", "Java"],
+      "brackets": ["[", "]"],
+      "icon": "server",
+      "image": "engineering.jpeg"
+    },
+    {
+      "name": "Databases",
+      "description": "Design, implement, and maintain a variety of relational and NoSQL databases. Run queries, migrations, and reports on large tables of data.",
+      "skills": ["PostgreSQL", "MySQL", "Redis", "Firebase"],
+      "brackets": ["/*", "*/"],
+      "icon": "database",
+      "image": "database.webp"
+    },
+    {
+      "name": "DevOps",
+      "description": "Incorporate Agile methodology, BDD and TDD practices. Employ a number of automation technologies, build tools, and cloud hosting platforms.",
+      "skills": ["Heroku", "AWS", "Git", "GA4", "Metabase"],
+      "brackets": ["$", "$"],
+      "icon": "tools",
+      "image": "hardware.png"
+    },
+    {
+      "name": "Graphics",
+      "description": "Create comprehensive charts and data visualizations. Design lively 2D web animations and complex 3D models and scenes.",
+      "skills": ["P5", "D3", "ThreeJS", "Unity", "Godot"],
+      "brackets": ["{", "}"],
+      "icon": "fill-drip",
+      "image": "computer.jpg"
+    },
+    {
+      "name": "Data Pipelines",
+      "description": "Architect and construct large-scale ETL pipelines. Leverage data engineering tools to ensure performance and reliability of data workflows.",
+      "skills": ["Python", "AWS", "EC2", "SQS", "S3", "CFN"],
+      "brackets": ["#", "#"],
+      "icon": "layer-group",
+      "image": "ai.jpg"
+    }
+  ],
+  "languageData": [
+    {
+      "name": "JavaScript",
+      "skills": ["React", "Redux", "Next.js", "Node.js", "Express", "jQuery", "ElectronJS", "D3", "ThreeJS", "P5.js"],
+      "progress": 100,
+      "level": "advanced",
+      "icon": "fa-brands fa-square-js"
+    },
+    {
+      "name": "Ruby",
+      "skills": ["Rails", "Devise", "Active Admin", "Twilio", "Rspec", "Yard", "Rswag"],
+      "progress": 100,
+      "level": "advanced",
+      "icon": "fas fa-gem"
+    },
+    {
+      "name": "HTML",
+      "skills": ["Jekyll", "Liquid", "Erb", "Haml"],
+      "progress": 90,
+      "level": "advanced",
+      "icon": "fa-brands fa-html5"
+    },
+    {
+      "name": "CSS",
+      "skills": ["Sass", "Ant Design", "Bootstrap", "Material UI", "Chakra UI", "shadcn", "Tailwind"],
+      "progress": 90,
+      "level": "advanced",
+      "icon": "fa-brands fa-css3-alt"
+    },
+    {
+      "name": "SQL",
+      "skills": ["PostgreSQL", "MySQL", "SQLite", "DB2", "Oracle", "Postico", "DBeaver"],
+      "progress": 85,
+      "level": "proficient",
+      "icon": "fas fa-database"
+    },
+    {
+      "name": "Python",
+      "skills": ["Pandas", "SQL Alchemy", "Tensorflow", "Keras", "Scikit", "PyTorch", "Scrapy", "Tkinter", "Pygame"],
+      "progress": 80,
+      "level": "proficient",
+      "icon": "fa-brands fa-python"
+    },
+    {
+      "name": "Java",
+      "skills": ["JavaFX", "Spring", "JUnit", "JDBC", "Android Studio"],
+      "progress": 70,
+      "level": "proficient",
+      "icon": "fa-brands fa-java"
+    },
+    {
+      "name": "NoSQL",
+      "skills": ["Firebase", "Redis", "MongoDB"],
+      "progress": 50,
+      "level": "template",
+      "icon": "fas fa-layer-group"
+    },
+    {
+      "name": "C#",
+      "skills": [".NET", "Unity", "Godot", "Windows Forms"],
+      "progress": 40,
+      "level": "familiar",
+      "icon": "fas fa-hashtag"
+    },
+    {
+      "name": "Dart",
+      "skills": ["Flutter"],
+      "progress": 25,
+      "level": "familiar",
+      "icon": "fa-brands fa-dart-lang"
+    },
+    {
+      "name": "C++",
+      "skills": ["Unreal Engine", "Qt", "SFML"],
+      "progress": 15,
+      "level": "familiar",
+      "icon": "fa-brands fa-creative-commons"
+    },
+    {
+      "name": "PHP",
+      "skills": ["Laravel"],
+      "progress": 10,
+      "level": "template",
+      "icon": "fa-brands fa-php"
+    }
+  ],
+  "experienceData": [
+    {
+      "company": "Rentgrata",
+      "position": "Software Engineer II",
+      "location": "Remote",
+      "link": "rentgrata.com",
+      "url": "https://www.rentgrata.com",
+      "dates": "Spring 2022 - Fall 2024",
+      "bullets": [
+        "Architected and built out an ETL pipeline and centralized data warehouse for critical integration partners, enhancing modularity and establishing a single source of truth for relevant data.",
+        "Developed a comprehensive system enabling admin users to efficiently manage third-party leads and resident reachout campaigns, improving conversation rates through targeted outreach and personalized engagement.",
+        "Implemented a custom links and widget keys allowing internal client success managers to establish associations between partners and listings, improving the efficiency of the partner management process.",
+        "Streamlined the resident and prospect signup flows to enhance the user experience and increase engagement, resulting in an increase in user retention."
+      ],
+      "skills": ["Ruby on Rails", "React", "Redux", "Next.js", "TypeScript", "PostgreSQL", "Heroku", "Python", "AWS", "Redis", "GA4", "Metabase", "Figma"]
+    },
+    {
+      "company": "Freelance Software Developer",
+      "location": "Honolulu, HI",
+      "link": "linkedin.com/in/cdastangoo",
+      "url": "https://linkedin.com/in/cdastangoo",
+      "dates": "Winter 2020 - Spring 2022",
+      "bullets": [
+        "Collaborated with clients to build tailored website solutions and custom Shopify templates for their e-commerce stores.",
+        "Implemented advanced customization techniques to enhance store functionality, such as product filtering, dynamic searching, and live chat functionalities.",
+        "Created captivating and engaging styling and animations to enhance the visual appeal and interactivity.",
+        "Optimized presentation across desktop, mobile, and tablet views to ensure a consistent and smooth cross-platform experience."
+      ],
+      "skills": ["Shopify API", "Liquid", "Ruby on Rails", "React", "jQuery", "Node.js", "MySQL"]
+    },
+    {
+      "company": "Pegasystems",
+      "position": "Software Engineer",
+      "location": "Cambridge, MA",
+      "link": "pega.com",
+      "url": "https://www.pega.com",
+      "dates": "Summer 2019 - Spring 2020",
+      "bullets": [
+        "Developed innovative architectures and UI for marketing simulations and scenario planning, resulting in enhanced user experience and improved decision-making capabilities.",
+        "Optimized the File/DB template infrastructure to significantly improving its performance and scalability, ensuring the campaign system’s robustness and reliability.",
+        "Proactively addressed and resolved critical customer hot-fix requests pertaining to campaign runtime and life-cycle, ensuring minimal disruption to customer operations."
+      ],
+      "skills": ["Java", "Cosmos UI", "PostgreSQL", "AWS", "Selenium", "DB2", "Oracle", "Tomcat"]
+    },
+    {
+      "company": "Cognition",
+      "position": "Software Development Intern",
+      "location": "Lexington, MA",
+      "link": "cognition.us",
+      "url": "https://cognition.us",
+      "dates": "Summer 2017 - 2018",
+      "bullets": [
+        "Designed and implemented a transfer function utility that seamlessly integrated Excel-based calculations into the requirements management platform, providing users with a more comprehensive solution.",
+        "Created interactive and visually appealing graphical displays for statistical tools within the risk management platform, facilitating data analysis and decision-making processes.",
+        "Enhanced the capabilities of the automated test engine by introducing performance testing benchmarking of test results, providing valuable insights for performance optimization and quality assurance."
+      ],
+      "skills": ["C#", "D3", "Aspose", "Windows Forms", "XML", "Selenium", "ObjectStore"]
+    },
+    {
+      "company": "UMass Amherst",
+      "position": "Student",
+      "location": "Amherst, MA",
+      "link": "cics.umass.edu",
+      "url": "https://www.cics.umass.edu",
+      "dates": "Fall 2015 - Spring 2019",
+      "bullets": [
+        "Earned degrees in computer science and computational mathematics.",
+        "Learned foundations in concepts like data structures and algorithms, machine learning, networks and cyber security, and theory of computation.",
+        "Perfected a nuanced diet of canned soup and ramen noodles."
+      ],
+      "skills": ["Data Structures", "Algorithms", "Theory of Computation", "Computer Graphics", "Artificial Intelligence", "Machine Learning", "Computer Vision", "Operating Systems", "Networks", "Cyber Security", "Cryptography", "Number Theory", "Graph Theory"]
+    }
+  ],
+  "projectData": [
+    {
+      "title": "Color Wheel Sorting",
+      "category": "Sorting Algorithms",
+      "description": "A unique visual representation of a variety of common sorting algorithms using a color wheel. Each slice in the circle represents a hue in the color spectrum, which are mapped to a digit between 0 and 359. These can then be shuffled and sorted to show how various sorting algorithms work in real time.",
+      "image": "color wheel.jpg",
+      "live": "https://codepen.io/cdastangoo/full/mdeZWxK",
+      "source": "https://github.com/cdastangoo/Color-Wheel-Sorting",
+      "stack": ["JS", "p5.js", "Dat.GUI"],
+      "tags": ["JavaScript", "P5.js"]
+    },
+    {
+      "title": "Mosaic Quilt",
+      "category": "Image Processing",
+      "description": "Implementation of various image processing algorithms from scratch. Includes basic pixel operations like brightness/contrast control, as well as convolution operations such as sharpening, blurring, edge detection, and dithering. Applies a quilt-like mosaic mask given a set of album and film covers.",
+      "image": "mosaic.jpg",
+      "live": "https://codepen.io/cdastangoo/full/gOxjYyE",
+      "source": "https://github.com/cdastangoo/Mosaic-Quilt",
+      "stack": ["JS", "Dat.GUI"],
+      "tags": ["JavaScript"]
+    },
+    {
+      "title": "Polyrhythms",
+      "category": "Musical Algorithms",
+      "description": "A set of modules showcasing various ways of visualizing polyrhythms. Conceptualizes how different rhythms and tones work with or against each other to create unique sounds and visual patterns.",
+      "image": "polyrhythms.png",
+      "live": "/polyrhythms",
+      "source": "https://github.com/cdastangoo/Polyrhythms",
+      "stack": ["JS", "p5.js", "Tone.js", "Dat.GUI"],
+      "tags": ["JavaScript", "P5.js"]
+    },
+    {
+      "title": "Maze Solver",
+      "category": "Maze Algorithms",
+      "description": "A simple visualizer for maze generation and solving algorithms.",
+      "image": "maze solver.png",
+      "live": "https://codepen.io/cdastangoo/full/mdZpoGv",
+      "source": "",
+      "stack": ["JS", "p5.js", "Dat.GUI"],
+      "tags": ["JavaScript", "P5.js"]
+    },
+    {
+      "title": "DMV Auto Booker",
+      "category": "Web Automation",
+      "description": "A Selenium-based webscraper that automates the process of booking a DMV appointment for drivers license/state ID/learners permit renewals and road tests. These can take several months to book due to high demand, as openings are sparse and can be snagged within a few minutes of freeing up. The script checks various locations and searches intermitently until a valid appointment is found.",
+      "image": "dmv booker.jpg",
+      "live": "",
+      "source": "https://github.com/cdastangoo/DMV-Appointment-Booker",
+      "stack": ["Python", "Selenium"],
+      "tags": ["Python"]
+    },
+    {
+      "title": "Personal Website",
+      "category": "Portfolio",
+      "description": "The website you are currently viewing.",
+      "image": "personal website.png",
+      "live": "/",
+      "source": "https://github.com/cdastangoo/cdastangoo.github.io",
+      "stack": ["HTML", "CSS", "JS", "jQuery", "p5.js"],
+      "tags": ["JavaScript", "P5.js"]
+    }
+  ]
+}
