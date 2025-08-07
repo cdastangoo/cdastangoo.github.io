@@ -144,10 +144,10 @@
       "url": "https://www.rentgrata.com",
       "dates": "Spring 2022 - Fall 2024",
       "bullets": [
-        "Spearheaded the implementation of a centralized schema, data warehouse, and data pipeline of third-party integrations, enhancing modularity and establishing a single source of truth for relevant data.",
-        "Developed a comprehensive system enabling admin users to efficiently manage resident reach-out campaigns, improving conversation rates through targeted outreach and personalized engagement.",
-        "Implemented a robust notifications feature that empowered property managers to monitor conversations on various topics, enabling more proactive community management.",
-        "Streamlined the resident and prospect signup flows to enhance the user experience and increase engagement, resulting in a significant increase in user retention."
+        "Architected and built out an ETL pipeline and centralized data warehouse for critical integration partners, enhancing modularity and establishing a single source of truth for relevant data.",
+        "Developed a comprehensive system enabling admin users to efficiently manage third-party leads and resident reachout campaigns, improving conversation rates through targeted outreach and personalized engagement.",
+        "Implemented a custom links and widget keys allowing internal client success managers to establish associations between partners and listings, improving the efficiency of the partner management process.",
+        "Streamlined the resident and prospect signup flows to enhance the user experience and increase engagement, resulting in an increase in user retention."
       ],
       "skills": ["Ruby on Rails", "React", "Redux", "Next.js", "TypeScript", "PostgreSQL", "Heroku", "Python", "AWS", "Redis", "GA4", "Metabase", "Figma"]
     },
@@ -232,19 +232,19 @@
     {
       "title": "Polyrhythms",
       "category": "Musical Algorithms",
-      "description": "",
-      "image": "",
-      "live": "",
-      "source": "",
+      "description": "A set of modules showcasing various ways of visualizing polyrhythms. Conceptualizes how different rhythms and tones work with or against each other to create unique sounds and visual patterns.",
+      "image": "polyrhythms.png",
+      "live": "/polyrhythms",
+      "source": "https://github.com/cdastangoo/Polyrhythms",
       "stack": ["JS", "p5.js", "Tone.js", "Dat.GUI"],
       "tags": ["JavaScript", "P5.js"]
     },
     {
       "title": "Maze Solver",
       "category": "Maze Algorithms",
-      "description": "",
-      "image": "",
-      "live": "",
+      "description": "A simple visualizer for maze generation and solving algorithms.",
+      "image": "maze solver.png",
+      "live": "https://codepen.io/cdastangoo/full/mdZpoGv",
       "source": "",
       "stack": ["JS", "p5.js", "Dat.GUI"],
       "tags": ["JavaScript", "P5.js"]
@@ -264,7 +264,7 @@
       "category": "Portfolio",
       "description": "The website you are currently viewing.",
       "image": "personal website.png",
-      "live": "https://cdastangoo.github.io",
+      "live": "/",
       "source": "https://github.com/cdastangoo/cdastangoo.github.io",
       "stack": ["HTML", "CSS", "JS", "jQuery", "p5.js"],
       "tags": ["JavaScript", "P5.js"]
